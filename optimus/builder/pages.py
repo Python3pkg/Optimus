@@ -59,7 +59,7 @@ class PageViewBase(object):
     def __init__(self, **kwargs):
         self._used_templates = None
 
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
         self.logger = logging.getLogger('optimus')
@@ -95,7 +95,7 @@ class PageViewBase(object):
         if getattr(self, "lang", None) is None:
             self.lang = LangBase(code=settings.LANGUAGE_CODE)
         # If the lang attribute contains a string, assume this is the language code
-        elif isinstance(getattr(self, "lang"), basestring):
+        elif isinstance(getattr(self, "lang"), str):
             self.lang = LangBase(code=getattr(self, "lang"))
         return self.lang
 

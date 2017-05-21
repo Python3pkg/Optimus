@@ -64,7 +64,7 @@ class I18NManager(object):
         string or tuples. If tuple, assume its first item is the locale name to use.
         """
         _f = lambda x: x[0] if isinstance(x, list) or isinstance(x, tuple) else x
-        return map(_f, languages)
+        return list(map(_f, languages))
 
     def init_locales_dir(self):
         """Create LOCALES_DIR directory if not allready exists"""

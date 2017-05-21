@@ -46,7 +46,7 @@ def import_settings(name=None):
     if not hasattr(_settings, "BUNDLES"):
         setattr(_settings, "BUNDLES", {})
     if not hasattr(_settings, "ENABLED_BUNDLES"):
-        setattr(_settings, "ENABLED_BUNDLES", _settings.BUNDLES.keys())
+        setattr(_settings, "ENABLED_BUNDLES", list(_settings.BUNDLES.keys()))
 
     # ReSTructuredText parser settings to use when building a RST document
     if not hasattr(_settings, "RST_PARSER_SETTINGS"):
